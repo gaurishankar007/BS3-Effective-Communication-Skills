@@ -1,0 +1,360 @@
+
+	
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="author" content="Turnitin, LLC" />
+    <meta name="keywords" content="" /> 
+    <meta name="description" content="" />
+    <meta name="viewport" content="width = initial-scale" />
+    <meta name="viewport" content="height = initial-scale" />
+    
+<title>Turnitin Originality Report</title>
+
+<base href="http://api.turnitin.com">
+<style type="text/css">
+	
+body	{
+	color: #000;
+	background: #ddd;
+	padding: 0;
+	border: 0;
+	font: 14px Arial, Verdana, sans-serif;
+	margin: 0;
+	text-align: center;
+	}
+	
+form	{
+	padding: 0;
+	margin: 0;
+	}
+	
+p	{
+	padding: .8em 1.5em;
+	margin: 0;
+	text-align: left;
+	}
+	
+img	{
+	border: 0;
+	padding: 0;
+	}
+
+div	{
+	padding: 0;
+	border: 0;
+	text-align: left;
+	}
+	
+strong	{
+	font-weight: bold;
+	}
+	
+h2	{
+	font-size: 15px;
+	margin: 20px 0 10px 20px;
+	}
+	
+a:link, a:visited	{
+	text-decoration: underline;
+	color: #00f;
+	}
+	
+a:hover, a:active	{
+	text-decoration: underline;
+	color: #888;
+	}
+	
+img#logo	{
+	float: right;
+	padding-right: 20px;
+	padding-top: 10px;
+	}
+	
+div#container	{
+	border: 1px solid #aaa;
+	width: 770px;
+	margin: 20px auto;
+	background: #fff;
+	padding: 10px 0;
+	}
+	
+div#top	{
+	background: #fff;
+	width: 7in;
+	margin: auto;
+	padding-bottom: 15px;
+	}
+	
+div#content	{
+	background: #fff;
+	}
+	
+#top p	{
+	padding: .3em 0 .3em 20px;
+	}
+
+#top span	{
+	padding-right: 35px;
+	}
+	
+#top p#orig	{
+	padding-top: 15px;
+	}
+	
+#orig span#score.red	{
+	border-right: 18px solid red;
+	padding: .2em .5em;
+	margin: 0 1em;
+	background: white;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	}
+	
+#orig span#score.orange	{
+	border-right: 18px solid orange;
+	padding: .2em .5em;
+	margin: 0 1em;
+	background: white;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	}
+	
+#orig span#score.yellow	{
+	border-right: 18px solid yellow;
+	padding: .2em .5em;
+	margin: 0 1em;
+	background: white;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	}
+	
+#orig span#score.green	{
+	border-right: 18px solid green;
+	padding: .2em .5em;
+	margin: 0 1em;
+	background: white;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	}
+	
+#orig span#score.blue	{
+	border-right: 18px solid blue;
+	padding: .2em .5em;
+	margin: 0 1em;
+	background: white;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	}
+	
+div.divider	{
+	width: 7in;
+	border: 1px dotted #888;
+	margin: auto;
+	padding: 4px 0 4px 10px;
+	font-weight: bold;
+	background: #ddd;
+	font-size: 15px;
+	}
+	
+div.links	{
+	width: 7in;
+	margin: auto;
+	}
+	
+.links div	{
+	padding: 15px 20px 15px 20px;
+	border-bottom: 1px dotted #888;
+	}
+	
+.links div#last	{
+	padding: 15px 20px 20px 20px;
+	border-bottom: 0;
+	}
+	
+div.number	{
+	float: right;
+	background: white;
+	border: 1px solid #888;
+	margin: 0 0 0 20px;
+	padding: .1em .5em;
+	text-align: center;
+	color: black;
+	font-weight: bold;
+	font-size: 15px;
+	line-height: 20px;
+	}
+	
+div.number-l	{
+	float: left;
+	background: white;
+	border: 1px solid #888;
+	margin: 6px 16px 10px 0;
+	padding: .1em .5em;
+	text-align: center;
+	color: black;
+	font-weight: bold;
+	font-size: 15px;
+	line-height: 20px;
+	}
+	
+.links div p	{
+	padding: .2em 1.5em .4em 0;
+	}
+	
+.links div p#mess	{
+	padding: .2em 1.5em 0 0;
+	}
+	
+div#body	{
+	line-height: 1.5em;
+	width: 7in;
+	margin: auto;
+	padding-bottom: 20px;
+	}
+	
+#body p	{
+	color: #555;
+	padding-top: 30px;
+	line-height: 20px;
+	}
+
+	
+#body a	{
+	display: block;
+	color: #D10A0A;
+	margin: 1em 3em;
+	background-repeat: no-repeat;
+	background-position: top right;
+	padding: 1em 1em;
+	border: 1px dotted #888;
+	font-weight: bold;
+	font-size: 15px;
+	text-decoration: none;
+	line-height: 26px;
+	background: #FFFFE5;
+	}
+
+#body span	{
+	color: #555;
+	font-weight: normal;
+	font-size: 14px;
+	}
+
+#body span.number	{
+	display: block;
+	float: right;
+	color: #000;
+	font-weight: normal;
+	border: 1px solid #888;
+	padding: 0 6px;
+	font-weight: bold;
+	margin-left: 15px;
+	font-size: .9em;
+	background: #fff;
+	}
+	
+#actions	{
+	display: none;
+	}
+
+</style>
+
+
+
+</head>
+
+<body id="or_print_report">
+
+
+<div id="container">
+
+<div id="top">
+    <div id="content">
+        <!-- ######### Top Body  ##########################--> 
+        <div id="top_body">
+            <p id="title">
+            <img src="/r/build/images/b3964fd7e38c8fcbb8bfbf2efc1f0635cb_turnitin_logo.gif" id="logo" width="60">
+            Turnitin Originality Report
+            </p>
+                <div class="general_info">
+                    <p>
+                        <span>Final Assignment</span>
+                        
+                        by Student User
+                        
+                    </p>
+                    <p>
+                        From SWT201CS-CW Part 1 (Moodle TT) (STW201CS-Effective Communication Skills 2-S20 (Moodle TT))
+                    </p>
+                    <ul>
+                        <li>Processed on 08-Apr-2021 08:06 IST</li>
+                        <li>ID: 1553302820</li>
+                        <li>Word Count: 1577</li>
+                    </ul>
+                </div>
+                <div class="similarity_box">
+                    <div class="overall_similarity">
+                        <div class="color_box green">&nbsp;</div>
+                        <div class="similarity_title">Similarity Index</div>
+                        <div class="similarity_percent">2%</div>
+                    </div>
+                    <div class="similarity_by_source">
+                        <div class="similarity_title">Similarity by Source</div>
+                        <dl>
+                            <dt>Internet&nbsp;Sources:</dt>
+                            <dd>2%</dd>
+                            <div class="clear"></div>
+                            <dt>Publications:</dt>
+                            <dd>0%</dd>
+                            <div class="clear"></div>
+                            <dt>Student&nbsp;Papers:</dt>
+                            <dd>1%</dd>
+                            <div class="clear"></div>
+                        </dl>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                                 
+        </div>
+        <!-- ######### END Top Body  ##########################--> 
+    </div>
+</div>
+
+<div class="divider">sources:</div>
+
+<div class="links">
+
+	<div>
+	<div class="number-l">1</div>
+	<p>1% match (student papers from 01-Mar-2018)</p>
+
+	<a href="/paperInfo.asp?r=78.2375256513866&svr=66&session-id=f4eac7e400254c1d8e85177e8671122e&lang=en_us&oid=oid:1:923948369&perc=1">Submitted to University of Bridgeport on 2018-03-01</a>
+
+	</div>
+	<div id="last">
+	<div class="number-l">2</div>
+	<p>1% match (Internet from 03-Apr-2021)</p>
+
+	<a href="https://healthtian.com/neuro-linguistic-programming/">https://healthtian.com/neuro-linguistic-programming/</a>
+
+	</div>
+
+</div>
+
+
+
+<div class="divider">paper text:</div>
+<div id="body">
+NLP NLP stands for <a href="javascript:openDSC(397144924, 3796, '52');" onmouseover="doRollover(2);" onmouseout="undoRollover(2);" id="52" name="2" ><span class="b-ref">2</span>Neuro-Linguistic Programming.<span> It </span>is a Psychological technique<span> for improving </span>and</a> enhancing our communication skills with ourselves and with others to get positive and desired personal results. It relates thoughts coming from our sensory, language that we use to make sense of words and the flexibility of behavior learned from experience. Its main goal is to help to get success not only in the business field but also in the personal relationship and for a future career with an experimental approach. It was developed by linguist John Grinder, and an information scientist and mathematician Richard Bandler, in the early 1970s (Help, 2018). It was a very helpful invention and from then on it <a href="javascript:openDSC(923948369, 1, '25');" onmouseover="doRollover(1);" onmouseout="undoRollover(1);" id="25" name="1" ><span class="b-ref">1</span>is used in a wide variety of fields, including counseling, medicine, law, business, the performing arts, sports, the military, and education.<span> I </span>and</a> my friend were talking about our school’s funny moments during break time. Both of us were remembering the past and sharing the incidents. I was looking at my friend’s eyes and his eyes were moving in different directions. Most of the time his eyes were up and to the left. Sometimes they were to the left, down and to the left, down and to the right. From his eye movement, I knew that he was not lying at all, he was sharing his true experience. But some of my shared incidents were self-created which did not happen at all and my I eyes were also up and to the right at that moment. I always used to make anchoring while elaborating the meaning of any topic or expressing something with feelings but I never care about them. I just learned it from seniors and I did not know the anchoring makes communication more effective. I realize that it’s one of the important NLP techniques in my English course class. I knew that anchoring helps us to associate any physical positive response along with our emotions. When we expose a particular type of stimulus while being in an emotional state, then a connection is built between the particular stimuli and the emotion. If these types of unique stimuli occur often, then the emotion related to them will be triggered at that moment (Paras, 2020). Mirroring and Rapport help to establish a trustable connection with people by breaking the ice between them. Sometimes we need help while solving problems, completing an assignment, in the exam, and also in other things. Therefore, I was monitoring the behavior of one of my classmates so that I can establish a good connection with him. One day I went to him and start talking about our assignment topic during the break time. He shared a lot of important things that I also didn’t know before. It was very helpful talking to me. If I did not know the classmate before talking to him, then I couldn’t flow on his way while communicating and the talking wouldn’t have been that good. Sometimes I got sad when I see my previous semester results because I have got very low masks in one of the two subjects. I did not get the result that I had expected because I had given my 100% to do the best as much as I can. I did not get what I deserve. To get rid of those sad feelings, I reframe my thoughts with positive feelings. I take those failures as a chance to learn more, do better, and score more in the coming days. Taking failure as an opportunity to improve ourselves rather than taking it as a regrate is more beneficial. It is like disassociating the feelings of shyness, sadness, nervousness which come out automatically within ourselves when remembering the past or when we are in an uncomfortable situation. We have to look back at it from an observer’s perspective which will change the feelings dramatically (Hurst, 2021). Sometimes I imagine doing something in the future and visualize my reactions. It is like being ready for a future situation from the present moment. It gives the positive dealing experience before actually getting into the situation in reality and whenever I do, I would make changes to the situation better. It is called Future Pacing NLP techniques. Everybody is not successful and gets desired results even though they work harder because there is some specific way of communicating and keeping ourselves in good and positive condition and everybody doesn’t flow on that way. NLP can help people to improve their communication skills, mental situation and reprogram their thoughts as per situation requirements. Personal Revelation There are many things related to internal and external communication skills, personality reflection, and positivity that we discussed and practiced through the Effective Communication Skills course topics in this semester. But the most effective topic that changes my visualization on communication was Emotional Intelligence (EI). I had no idea about EI before. After knowing it I realize that EI is another talent that is also as important as IQ to reflect our personality and I had very low EI. I was trying to ask the teacher some questions about the weekly assignment at the end of the online class. My English pronunciation was very bad and my talking was a little bit shaky and the teacher also didn’t understand the questions properly. So, he told me to ask him again and I hardly repeated my questions. I even couldn’t admit my confusion properly. I was also a bit nervous while showing the classwork to the teacher in front of the other students in one of the online classes before. I was disappointed and a little bit frustrated because I couldn’t communicate and express myself properly and I realized that I should have been prepared before asking the questions. I learned that assertive communication is very important while dealing with a person to get desired outcomes and I was not assertive at all. Understanding, confidence, and nervousness are also the source behind communication skills. If a person has a clear understanding but he is nervous, then the communication will be never better. So, for better communication confidence is a compulsory factor. One of my friends come to me while I was taking a quick look at the assignment of Algorithm and Data Structure and he asked me to give him the coding of the assignment tasks when I complete them. I did not like the way he asked me for help and I refused to give him the coding. I told him that I will explain and clarify the questions and give all the solutions of the questions but I would not give the coding because it will be copy and paste. Then he also agreed with my statement. Sometimes we get into some kind of situation in which we have to deny the incoming request otherwise it will affect us badly or make a loss in the future. Saying “no” to some else’s request in a good way is very challenging. We have to be very careful with our words. We have to provide a clear understanding of why we refuse the request. I was reserved, less confident, weak on expressive things, and a bit shy. I was not able to communicate as properly as I want even if I have a clear understanding because of my nervousness. From the similar events as explained in the above paragraph, I was able to improve myself. Now I can speak in front of the class without hesitating and choking. I gain patients inside myself and I don’t take many worries. My conversations were aggressive before and now I can establish a trustful and meaningful conversation with anyone even if I don’t know the person. I used to give unnecessary information while talking but now I have managed to filter my content while talking. I am more assertive now. I can refuse anyone’s request positively if I have to. I have increased self-motivation and I have managed to keep positivity during the communication. Sometimes I used to get confused during the conversion but I am very specific and straightforward now. I had very low EI before and now I have improved my EI a little bit. I will be improving my EI as much as I can in the coming days so that I can reflect on a better personality while communicating with people. It will help me to build a better career in the future. I am also following some NLP techniques to develop personal areas. I am trying to create some anchors while expressing my emotions. Before starting a conversation with a person that I have never talked to, I mirror the person’s behavior to communicate in his way so that I can build a trustable connection. I care about eye movement while talking to understand the person more deeply. Sometimes I reframe my thoughts if I failed to do something or got in a bad situation to stay away from negative thoughts. I disassociate the events of my past from my mind which makes me down and feel sad when remembering them. I always try to stay positive and happy so that there will be no distractions and failures on the way to my career. References Help, G., 2018. Goodtherapy.org. [Online] Available at: https://www.goodtherapy.org/learn-about-therapy/types/neuro-linguistic-programming [Accessed 22 March 2021]. Hurst, K., 2021. The Law Of Attraction. [Online] Available at: https://www.thelawofattraction.com/5-nlp-techniques-will-transform-life/ [Accessed 23 March 2021]. Paras, D., 2020. Coacharya. [Online] Available at: https://coacharya.com/blog/neuro-linguistic-programming-nlp-techniques-benefit- coaching/ [Accessed 22 March 2021]. Page | 1 10173183 Page | 2 10173183 Page | 3 10173183 Page | 4 10173183 Page | 5 10173183 
+</div>
+</div>
+</body>
+</html>
